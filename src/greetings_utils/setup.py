@@ -6,9 +6,8 @@ with open("README.md", "r") as fh:
 
 setup(
     name="sample-python-versioning",
-    version_format='v0.1.0',
-    # version_format='{tag}-{gitsha}',
-    # setup_requires=['setuptools-git-version'],
+    version_format='{tag}+{gitsha}',
+    setup_requires=['setuptools-git-version'],
     author="Serhii Shepel",
     author_email="serhiy.shepel@gmail.com",
     description="Sample application",
