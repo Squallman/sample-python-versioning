@@ -3,7 +3,10 @@ if (buildNumber > 1) milestone(buildNumber - 1)
 milestone(buildNumber)
 
 pipeline {
+    agent any
+
     stages {
+
         stage("Install Virtualenv") {
             steps {
                 sh """
