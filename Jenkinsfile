@@ -5,10 +5,6 @@ milestone(buildNumber)
 pipeline {
     agent { label 'jnlp-python3-slave' }
 
-    options {
-      ansiColor('xterm')
-    }
-
     stages {
 
         stage("Install Virtualenv") {
