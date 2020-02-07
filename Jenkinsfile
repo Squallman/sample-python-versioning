@@ -3,10 +3,7 @@ if (buildNumber > 1) milestone(buildNumber - 1)
 milestone(buildNumber)
 
 pipeline {
-    agent { label 'jnlp-python3-slave' }
-
     stages {
-
         stage("Install Virtualenv") {
             steps {
                 sh """
