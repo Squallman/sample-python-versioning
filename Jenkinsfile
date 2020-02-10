@@ -10,6 +10,7 @@ pipeline {
             steps {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
                     sh """
+                        #!/bin/bash
                         pip install virtualenv
                         virtualenv ${WORKSPACE}/penv
                         ls -la ${WORKSPACE}/penv
@@ -25,6 +26,7 @@ pipeline {
             steps {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
                     sh """
+                        #!/bin/bash
                         source ${WORKSPACE}/penv/bin/activate
                         ./run-build.sh
                         deactivate
