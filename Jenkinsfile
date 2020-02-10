@@ -4,6 +4,7 @@ pipeline {
         stage ('Unit Dependencies') {
             steps {
                 sh """
+                    ls -la
                     source bin/activate
                     ./run-install
                     deactivate
