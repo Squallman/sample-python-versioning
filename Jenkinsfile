@@ -2,7 +2,7 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile'
-            additionalBuildArgs  '--build-arg WORKSPACE=1.0.2'
+            additionalBuildArgs  '--build-arg WORKSPACE=${WORKSPACE}'
         }
     }
     stages {
