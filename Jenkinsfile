@@ -9,8 +9,8 @@ pipeline {
         stage ('Unit Dependencies') {
             steps {
                 sh """
-                    ls -la
-                    source penv/bin/activate
+                    ls -la ${WORKSPACE}
+                    source ${WORKSPACE}/penv/bin/activate
                     ./run-install
                     deactivate
                 """
@@ -19,7 +19,7 @@ pipeline {
         stage ('Run build') {
             steps {
                 sh """
-                    source bin/activate
+                    source ${WORKSPACE}/penv/bin/activate
                     ./run-build
                     deactivate
                 """
