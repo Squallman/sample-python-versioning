@@ -37,7 +37,7 @@ function installSrcRequirements() {
     subDirName="$(basename $subDir)"
 
     # Exclude dir starting with . or _
-    if [[ $subDirName =~ ^[^_|\.].*$ ]]; then
+    if [[ $subDirName != _* ]] and [[ $subDirName != .* ]]; then
       installRequirements $subDirName
     fi
   done
