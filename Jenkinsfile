@@ -31,13 +31,5 @@ pipeline {
                 }
             }
         }
-
-        stage ('Clean') {
-            post {
-                cleanup {
-                    cleanWs()
-                }
-            }
-        }
     }
 }
