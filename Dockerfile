@@ -1,2 +1,2 @@
 FROM python:3.7-alpine
-RUN pip install -r virtualenv
+RUN pip install virtualenv
