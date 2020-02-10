@@ -1,10 +1,22 @@
 pipeline {
     agent { dockerfile true }
     stages {
-        stage('Test') {
+        stage ('Unit Dependencies') {
             steps {
-                sh 'pip --version'
-                sh 'virtualenv --version'
+                sh """
+                    source bin/activate
+                    ./run-install
+                    deactivate
+                """
+            }
+        }
+        stage ('Run build') {
+            steps {
+                sh """
+                    source bin/activate
+                    ./run-build
+                    deactivate
+                """
             }
         }
     }
