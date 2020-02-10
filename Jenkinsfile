@@ -12,7 +12,8 @@ pipeline {
                     sh """
                         pip install virtualenv
                         virtualenv --python=python3.7 ${WORKSPACE}/penv
-                        ls -la ${WORKSPACE}
+                        ls -la ${WORKSPACE}/penv
+                        ls -la ${WORKSPACE}/penv/bin
                         source ${WORKSPACE}/penv/bin/activate
                         ./run-install.sh
                         deactivate
