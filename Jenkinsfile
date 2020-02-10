@@ -1,9 +1,8 @@
 pipeline {
     agent {
-        docker {
+        dockerfile {
             filename 'Dockerfile'
-            additionalBuildArgs $WORKSPACE
-            reuseNode true
+            args 'test'
         }
     }
     stages {
