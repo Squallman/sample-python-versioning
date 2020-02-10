@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage ('Unit Dependencies') {
             steps {
-                sh """
+                bash """
                         #!/bin/bash
                         source ${WORKSPACE}/penv/bin/activate
                         ./run-install.sh
@@ -18,7 +18,7 @@ pipeline {
         }
         stage ('Run build') {
             steps {
-                sh """
+                bash """
                         #!/bin/bash
                         source ${WORKSPACE}/penv/bin/activate
                         ./run-build.sh
