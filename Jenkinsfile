@@ -1,5 +1,9 @@
 pipeline {
-    agent { dockerfile true }
+    agent {
+        filename 'Dockerfile'
+        additionalBuildArgs $WORKSPACE
+        reuseNode true
+    }
     stages {
         stage ('Unit Dependencies') {
             steps {
