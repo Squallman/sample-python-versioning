@@ -9,6 +9,8 @@ pipeline {
         stage ('Unit Dependencies') {
             steps {
                 sh """
+                    pip install virtualenv
+                    virtualenv --python=python3.7 ${WORKSPACE}/penv
                     ls -la ${WORKSPACE}
                     source ${WORKSPACE}/penv/bin/activate
                     ./run-install
