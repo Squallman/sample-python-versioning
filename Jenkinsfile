@@ -11,7 +11,7 @@ pipeline {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
                     sh """
                         pip install virtualenv
-                        virtualenv --python=python3.7 ${WORKSPACE}/penv
+                        virtualenv ${WORKSPACE}/penv
                         ls -la ${WORKSPACE}/penv
                         ls -la ${WORKSPACE}/penv/bin
                         source ${WORKSPACE}/penv/bin/activate
