@@ -2,6 +2,7 @@ pipeline {
     agent {
         dockerfile {
             filename 'Dockerfile'
+            additionalBuildArgs  '--build-arg WORKSPACE=${WORKSPACE}'
         }
     }
     stages {
@@ -10,8 +11,6 @@ pipeline {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
                     sh """
                         #!/bin/bash
-                        pip install virtualenv
-                        virtualenv ${WORKSPACE}/penv
                         source ${WORKSPACE}/penv/bin/activate
                         ./run-install.sh
                         deactivate
