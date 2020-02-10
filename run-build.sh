@@ -75,11 +75,7 @@ function buildSrc() {
     # Exclude test, test_it and resources
     if [ $subDirName != "test" ] && [ $subDirName != "test_it" ] && [ $subDirName != "resources" ]; then
       # Exclude dir starting with . or _
-      if [[ $subDirName != _* ]] && [[ $subDirName != .* ]]; then
-        # TODO Find a way to understand if building a layer or a lambda
-        buildLayer $subDirName
-        # buildLambda $subDirName
-      fi
+      buildLayer $subDirName
     fi
   done
 }
