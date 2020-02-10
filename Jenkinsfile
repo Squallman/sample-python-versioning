@@ -14,7 +14,7 @@ pipeline {
                         virtualenv --python=python3.7 ${WORKSPACE}/penv
                         ls -la ${WORKSPACE}
                         source ${WORKSPACE}/penv/bin/activate
-                        ./run-install
+                        ./run-install.sh
                         deactivate
                     """
                 }
@@ -25,7 +25,7 @@ pipeline {
                 withEnv(["HOME=${env.WORKSPACE}"]) {
                     sh """
                         source ${WORKSPACE}/penv/bin/activate
-                        ./run-build
+                        ./run-build.sh
                         deactivate
                     """
                 }
