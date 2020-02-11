@@ -3,6 +3,8 @@ ARG WORKSPACE
 RUN apk add zip
 RUN apk add bash
 
+RUN ls -la $WORKSPACE
+
 RUN echo $'[repo] \n\
 name            = YUM Repository \n\
 baseurl         = https://example.com/packages/ \n\
