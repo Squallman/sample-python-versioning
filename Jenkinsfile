@@ -21,6 +21,7 @@ pipeline {
                         source ${WORKSPACE}/penv/bin/activate
                         ./run-build.sh
                         deactivate
+                        cat ${WORKSPACE}/my.cfg
                     """
             }
         }

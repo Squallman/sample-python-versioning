@@ -3,9 +3,11 @@ ARG WORKSPACE
 RUN apk add zip
 RUN apk add bash
 
-RUN apk update && apk add mysql-client && rm -f /var/cache/apk/*
-ENTRYPOINT ["sh"]
-CMD ["-c" , "tail -f /dev/null"]
+RUN echo $'[repo] \n\
+name            = YUM Repository \n\
+baseurl         = https://example.com/packages/ \n\
+enabled         = 1 \n\
+gpgcheck        = 0' > $WORKSPACE/my.cfg
 
 RUN bash
 RUN pip install virtualenv
